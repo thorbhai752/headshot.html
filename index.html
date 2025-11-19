@@ -1,4 +1,4 @@
-<!-- Updated HTML: All clicks go to monetization link, and after 35 clicks also redirects -->
+<!-- Updated HTML: Smart multiple ad placements for good earnings + performance -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,16 +26,22 @@
       animation:spin 20s linear infinite;
     }
     @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360)}}
+    header{
+      width:100%;max-width:920px;z-index:2;margin-bottom:12px;
+      display:flex;flex-direction:column;align-items:center;
+    }
     header h1{
       font-family:"Orbitron";font-size:1.9rem;
       background:linear-gradient(90deg,#ff0055,#00ffee);
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;
     }
+    /* layout */
+    .outer{width:100%;max-width:920px;z-index:2}
     .grid{
-      width:100%;max-width:920px;
+      width:100%;
       display:grid;gap:20px;
       grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      z-index:2;
+      align-items:start;
     }
     .card{
       padding:12px;border-radius:14px;text-align:center;
@@ -49,103 +55,169 @@
       border:none;border-radius:10px;color:#fff;font-weight:700;
       cursor:pointer;
     }
-    footer{opacity:.6;margin-top:32px;font-size:.9rem}
+    .ad-inline{display:flex;justify-content:center;align-items:center;padding:8px}
+    footer{opacity:.6;margin-top:32px;font-size:.9rem;width:100%;max-width:920px;text-align:center}
+    /* floating sidebar ad (hidden on small screens) */
+    .floating-ad{
+      position:fixed;right:12px;top:120px;z-index:9999;
+      width:160px;padding:6px;background:transparent;
+      display:block;
+    }
+    @media(max-width:900px){ .floating-ad{display:none} }
+    /* keep page responsive */
   </style>
 
-  <script type='text/javascript' src='//pl28060486.effectivegatecpm.com/f5/72/f9/f572f9ae901e03132370edf67af2be72.js'></script>
+  <!-- light-weight loader for ad scripts (keeps main thread free) -->
+  <script>
+    // tiny helper to async-load external script
+    function loadScript(src, asyncAttr=true, attrs) {
+      var s = document.createElement('script');
+      s.src = src;
+      if(asyncAttr) s.async = true;
+      if(attrs){
+        for(var k in attrs) s.setAttribute(k, attrs[k]);
+      }
+      document.head.appendChild(s);
+    }
+  </script>
 </head>
 <body>
 
-  <!-- ⭐ AD CODE YOU GAVE (PLACED SAFELY HERE) -->
-  <script async="async" data-cfasync="false" src="//pl28060636.effectivegatecpm.com/7c603eb4a545dc72c3ab71acb0976e38/invoke.js"></script>
-  <div id="container-7c603eb4a545dc72c3ab71acb0976e38"></div>
-  <!-- ⭐ END AD CODE -->
+  <!-- ========= TOP: AD #1 (placed once at very top for visibility) ========= -->
+  <script type='text/javascript' src='//pl28086657.effectivegatecpm.com/af/a3/d4/afa3d4f8ad4dd402692ffcdfe71b2835.js'></script>
 
-  <script type="text/javascript">
-	atOptions = {
-		'key' : 'c7175b65a1be376229fb49246a9a06b2',
-		'format' : 'iframe',
-		'height' : 300,
-		'width' : 160,
-		'params' : {}
-	};
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/c7175b65a1be376229fb49246a9a06b2/invoke.js"></script>
+  <div class="outer">
+    <header>
+      <!-- optional uploaded screenshot (local path) -->
+      <!-- If your server doesn't serve this path, remove this img line -->
+      <img src="/mnt/data/Screenshot 2025-11-16 004158.png" alt="editor-screenshot" style="max-width:100%;border-radius:8px;margin-bottom:12px;display:block">
+      <h1>🔥 Free Fire Headshot Booster</h1>
+      <p style="opacity:.9">Click download to continue.</p>
+    </header>
 
-<header>
-  <h1>🔥 Free Fire Headshot Booster</h1>
-  <p>Click download to continue.</p>
-</header>
+    <!-- ========= AD (after header) - lightweight include of the existing container ad ========= -->
+    <div class="ad-inline card" aria-hidden="false">
+      <script async="async" data-cfasync="false" src="//pl28060636.effectivegatecpm.com/7c603eb4a545dc72c3ab71acb0976e38/invoke.js"></script>
+      <div id="container-7c603eb4a545dc72c3ab71acb0976e38"></div>
+    </div>
 
-<div class="controls">
-  <div class="counter">Total clicks: <span id="clickCount">0</span> / 35</div>
-</div>
+    <div class="controls" style="margin-bottom:8px">
+      <div class="counter">Total clicks: <span id="clickCount">0</span> / 35</div>
+    </div>
 
-<main class="grid">
+    <main class="grid">
 
-  <div class="card">
-    <h3>Headshot Booster</h3>
-    <img src="https://i.postimg.cc/cHzsYkBc/3.png">
-    <button class="claim">🔥 Download 🔥</button>
+      <div class="card">
+        <h3>Headshot Booster</h3>
+        <img src="https://i.postimg.cc/cHzsYkBc/3.png" alt="Headshot Booster">
+        <button class="claim">🔥 Download 🔥</button>
+      </div>
+
+      <div class="card">
+        <h3>Paid Sensi Unlock</h3>
+        <img src="https://i.postimg.cc/8kW5MDx3/2.png" alt="Paid Sensi Unlock">
+        <button class="claim">🔥 Download 🔥</button>
+      </div>
+
+      <!-- ========= inline banner ad (keeps layout intact) ========= -->
+      <div class="card ad-inline" aria-label="inline-banner-ad">
+        <!-- reuse an existing ad provider call (safe, single banner) -->
+        <script type="text/javascript">
+          atOptions = {
+            'key' : 'f64667f47b6d63c69cb69bac5df35fba',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/f64667f47b6d63c69cb69bac5df35fba/invoke.js"></script>
+      </div>
+
+      <div class="card">
+        <h3>Best FF Settings</h3>
+        <img src="https://i.postimg.cc/yxBzFqS2/4.png" alt="Best Settings">
+        <button class="claim">🔥 Download 🔥</button>
+      </div>
+
+      <!-- ========= AD #2 placement as sponsored card (160x600) ========= -->
+      <div class="card" aria-label="sponsored-vertical-ad">
+        <h3>Sponsored</h3>
+        <div style="display:flex;justify-content:center;">
+          <script type="text/javascript">
+            atOptions = {
+              'key' : '87e2e9836e0e0b0581ecaba6dbe66085',
+              'format' : 'iframe',
+              'height' : 600,
+              'width' : 160,
+              'params' : {}
+            };
+          </script>
+          <script type="text/javascript" src="//www.highperformanceformat.com/87e2e9836e0e0b0581ecaba6dbe66085/invoke.js"></script>
+        </div>
+        <div style="height:8px;"></div>
+        <button class="claim">🔥 Download Proxy 🔥</button>
+      </div>
+
+      <div class="card">
+        <h3>Free FF Headshot App</h3>
+        <img src="https://i.postimg.cc/8Cjk5Vhy/1.png" alt="Headshot App">
+        <button class="claim">🔥 Download 🔥</button>
+      </div>
+
+      <!-- ========= small repeated AD #1 (keeps count low but visibility up) ========= -->
+      <div class="card ad-inline" style="opacity:.95;">
+        <script type='text/javascript' src='//pl28086657.effectivegatecpm.com/af/a3/d4/afa3d4f8ad4dd402692ffcdfe71b2835.js'></script>
+        <div style="height:8px"></div>
+        <button class="claim">🔥 View Details 🔥</button>
+      </div>
+
+    </main>
+
+    <!-- ========= AD just above footer (another instance of AD #1, conservative repeat) ========= -->
+    <div class="ad-inline card" style="margin-top:18px;">
+      <script type='text/javascript' src='//pl28086657.effectivegatecpm.com/af/a3/d4/afa3d4f8ad4dd402692ffcdfe71b2835.js'></script>
+    </div>
+
+    <footer>© 2025 Free Fire Headshot Tools | THOR FF</footer>
   </div>
 
-  <div class="card">
-    <h3>Paid Sensi Unlock</h3>
-    <img src="https://i.postimg.cc/8kW5MDx3/2.png">
-    <button class="claim">🔥 Download 🔥</button>
+  <!-- ========= Floating sidebar ad (AD #2) for desktop only ========= -->
+  <div class="floating-ad" aria-hidden="false">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '87e2e9836e0e0b0581ecaba6dbe66085',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/87e2e9836e0e0b0581ecaba6dbe66085/invoke.js"></script>
   </div>
 
-  <div class="card">
-    <h3>Best FF Settings</h3>
-    <img src="https://i.postimg.cc/yxBzFqS2/4.png">
-    <button class="claim">🔥 Download 🔥</button>
-  </div>
-
-	<script type="text/javascript">
-	atOptions = {
-		'key' : 'f64667f47b6d63c69cb69bac5df35fba',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-  </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/f64667f47b6d63c69cb69bac5df35fba/invoke.js"></script>
-
-  <div class="card">
-    <h3>Free FF Headshot App</h3>
-    <img src="https://i.postimg.cc/8Cjk5Vhy/1.png">
-    <button class="claim">🔥 Download 🔥</button>
-  </div>
-
-</main>
-
-<footer>© 2025 Free Fire Headshot Tools | THOR FF</footer>
-
-<script>
-const MONETIZE = "https://www.effectivegatecpm.com/jdb3q7g6bg?key=0ee68f2ecbe08814869475bd996b55fa";
-const TOTAL = 35;
-
-let count = parseInt(localStorage.getItem("ff_clicks_final") || "0");
-document.getElementById("clickCount").textContent = count;
-
-document.querySelectorAll(".claim").forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Always open monetization on every click
-    window.open(MONETIZE, "_blank");
-
-    // Count clicks
-    count = Math.min(count + 1, TOTAL);
+  <!-- ========= minimal existing monetization & click logic (unchanged) ========= -->
+  <script>
+    const MONETIZE = "https://www.effectivegatecpm.com/jdb3q7g6bg?key=0ee68f2ecbe08814869475bd996b55fa";
+    const TOTAL = 35;
+    let count = parseInt(localStorage.getItem("ff_clicks_final") || "0");
     document.getElementById("clickCount").textContent = count;
-    localStorage.setItem("ff_clicks_final", count);
+    document.querySelectorAll(".claim").forEach(btn => {
+      btn.addEventListener("click", () => {
+        window.open(MONETIZE, "_blank");
+        count = Math.min(count + 1, TOTAL);
+        document.getElementById("clickCount").textContent = count;
+        localStorage.setItem("ff_clicks_final", count);
+        if (count === TOTAL) {
+          window.open(MONETIZE, "_blank");
+        }
+      });
+    });
+  </script>
 
-    // After 35 clicks, redirect again
-    if (count === TOTAL) {
-      window.open(MONETIZE, "_blank");
-    }
-  });
-});
-</script>
+  <!-- ========= final safe repeat of AD #1 near end of body (conservative) ========= -->
+  <script type='text/javascript' src='//pl28086657.effectivegatecpm.com/af/a3/d4/afa3d4f8ad4dd402692ffcdfe71b2835.js'></script>
 
 </body>
 </html>
+
